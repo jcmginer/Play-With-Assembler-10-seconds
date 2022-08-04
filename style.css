@@ -1,0 +1,21 @@
+.grid-main {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 400px;
+    gap: 20px;
+    background-color: rgb(255, 255, 255);
+    margin: 40px;
+    border-radius: 15px;
+    padding: 15px;
+    border-bottom: 1px solid black;
+    border-right: ;
+}
+
+.main-box {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+}
+
+body {
+    background-color: grey;
+}
