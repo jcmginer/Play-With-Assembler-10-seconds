@@ -7,6 +7,7 @@ let start = document.getElementById("btnStart");
 let startGame = document.getElementById("btnStartGame");
 let clickHere = document.getElementById("btnClickHere");
 let playAgain = document.getElementById("btnPlayAgain");
+let mainBoxBtn = document.getElementById("main-box-button");
 
 let counterVal = 0;
 
@@ -18,8 +19,10 @@ step4.style.display = "none";
 /* Storage User and Clicks */
 
 let user = document.getElementById("user");
-let numberC = document.getElementById('counter-label3');
+let numberC = document.getElementById('totalClicks');
 let ranking = document.getElementById("ranking");
+//let rankingModifier = document.getElementById("m");
+
 
 let myPlayers = {
     players: []
@@ -31,16 +34,19 @@ if(localStorage.getItem("myPlayers") !== null){
     ranking.innerHTML = "0";
 }
 
+
+
 start.onclick = function () {
-    myPlayers.players.push([user.value, numberC.value]);
-    ranking.innerHTML = JSON.stringify(myPlayers);
-    localStorage.setItem("myPlayers", JSON.stringify(myPlayers));
+    
     step1.style.display = "none";
     step2.style.display = "";
     step3.style.display = "none";
     step4.style.display = "none";
+    //rankingModifier.id = "ranking";
+    //ranking.id = "m";
     console.log(localStorage);
     console.log(numberC);
+
 }
 
 window.onload = function () {
@@ -62,7 +68,14 @@ startGame.onclick = function () {
 
     clickHere.onclick = function () {
         incrementClick();
+        mainBoxBtn.style.display = "block";
+        clickHere.style.width = "100px";
+        clickHere.style.height = "75px";
+        clickHere.style.position = "relative";        
+        clickHere.style.left = Math.random()*325 + 'px';
+        clickHere.style.top = Math.random()*300 + 'px';               
     }
+
     function incrementClick() {
         updateDisplay(++counterVal);
     }
@@ -74,10 +87,18 @@ startGame.onclick = function () {
     }
 }
 
+
+       
+
 playAgain.onclick = function () {
+    myPlayers.players.push([user.value, numberC.innerText]);
+    ranking.innerHTML = JSON.stringify(myPlayers);
+    localStorage.setItem("myPlayers", JSON.stringify(myPlayers));    
     step1.style.display = "";
     step2.style.display = "none";
     step3.style.display = "none";
     step4.style.display = "none";
+    document.getElementById('totalClicks').reset();
+
 }
 
