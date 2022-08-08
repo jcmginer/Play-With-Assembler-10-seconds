@@ -9,62 +9,70 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="container">
+    <section id="step1" class="container">
       <div class="grid-main">
         <div class="main-box">
           <h1>Choose a user name</h1>
           <form>
             <label>User name</label>
             <input type="text" id="user">
-            <input type="button" value="Start" id="btnEnviar">
+            <input type="button" value="Start" id="btnStart">
           </form>
-        </div>
-        <div class="scores-box">User Scores</div>
-      </div>
-    </div>
-
-    <div class="container">
-      <div class="grid-main">
-        <div class="main-box">
-          <input type="button" value="Click here" class="clickHere" />
-        </div>
-        <div class="scores-box">efwfwefwrewre</div>
-      </div>
-    </div>
-
-    <div class="container">
-      <div class="grid-main">
-        <div class="main-box">
-          <input type="button" value="Start game" class="startGame" />
-        </div>
-        <div class="scores-box">efwfwefwrewre</div>
-      </div>
-    </div>
-
-    
-    <div class="container">
-      <div class="grid-main">
-        <div class="main-box">
-          <h2>Your score</h2>
-          <p>Your 10 seconds are done!</p>
-          <h4>You have made 44 clicks </h4>
-          <input class="btn-play-again" type="button" value="Play again">
         </div>
         <div class="scores-box">
           <div>
             <h4>User score</h4>
-            <p class="name-user-score" id="nameUserScore">Name User score</p>
-            <p class="clicks-user-score" id="clicksUserScore">Clicks User</p>
-            <p class="name-user-score" id="nameUserScore">Name User score</p>
-            <p class="clicks-user-score" id="clicksUserScore">Clicks User</p>
-            <p class="name-user-score" id="nameUserScore">Name User score</p>
-            <p class="clicks-user-score" id="clicksUserScore">Clicks User</p>
-            <p class="name-user-score" id="nameUserScore">Name User score</p>
-            <p class="clicks-user-score" id="clicksUserScore">Clicks User</p>
+            <div id="ranking"><p id="counter-label1">0</p></div>
           </div>
         </div>
       </div>
-    </div>    
- 
+    </section>
+
+    <section id="step2" class="container">
+      <div class="grid-main">
+        <div class="main-box-button">
+          <input class="btn-center" type="button" value="Start game" id="btnStartGame" />
+        </div>
+        <div class="scores-box">
+          <div>
+            <h4>User score</h4>
+            <div id="ranking"><p id="counter-label2">0</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="step3" class="container">
+      <div class="grid-main">
+        <div class="main-box-button">
+          <input class="btn-center" type="button" value="Click here" id="btnClickHere" onclick="incrementClick()" />
+        </div>
+        <div class="scores-box">
+          <div>
+            <h4>User score</h4>
+            <div id="ranking"><p id="counter-label3">0</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="step4" class="container">
+      <div class="grid-main">
+      <div class="main-box">
+        <h2>Your score</h2>
+        <p>Your 10 seconds are done!</p>
+        <h4>You have made <span id="totalClicks">0</span> clicks! </h4>
+        <input id="btnPlayAgain" type="button" value="Play again">
+      </div>
+      <div class="scores-box">
+        <div>
+          <h4>User score</h4>
+          <div id="ranking">
+            <p id="counter-label4"> 0</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    </section>
   </body>
 </html>
